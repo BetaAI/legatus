@@ -9,7 +9,7 @@
     "packages": "jspm_packages"
   },
   "scripts": {
-    "prebuild": "shx rm -rf dist/*",
+    "prebuild": "shx rm -rf dist && shx mkdir -p dist/es6",
     "build:sfx": "jspm bundle-sfx src/lib-root.js dist/legatus.sfx.js --minify",
     "build:bundle": "jspm bundle src/lib-root.js dist/legatus.bundle.js --minify",
     "build:lib": "shx cp -r src dist/es6",
