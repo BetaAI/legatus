@@ -20,7 +20,7 @@ class PubSub
     this.$frame = null;
 
     this.strDelim = '.';
-    this.defPubPriority = 0;
+    this.defPriority = 0;
   }
 
   //===== PROTECTED METHODS ============================================================================================
@@ -169,7 +169,7 @@ class PubSub
     let subObj = this.$actionReg.get(sid);
     if(!subObj)
     {
-      subObj = {action:action, priority:this.defPubPriority, topics:0};
+      subObj = {action:action, priority:this.defPriority, topics:0};
       this.$actionReg.set(sid, subObj);
     }
     if(action !== null)
@@ -227,7 +227,7 @@ class PubSub
   }
 
   //===== API METHODS ==================================================================================================
-  publish(topic, data = null, origin = null, priority = this.defPubPriority)
+  publish(topic, data = null, origin = null, priority = this.defPriority)
   {
     this.$pubImpl(this.toTopic(topic), this.toEnvelope(data, origin), priority);
     return this;

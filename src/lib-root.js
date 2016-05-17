@@ -4,8 +4,13 @@
 'use strict';
 
 import PubSubFactory from './lib/pubsub-factory';
+import PubSub from './lib/pubsub';
 
 if(typeof window !== 'undefined')
+{
   window.PubSubFactory = PubSubFactory;
+  window.PubSub = PubSub;
+}
 
-export * from './lib/pubsub-factory';
+export {PubSub};
+export {PubSubFactory};
